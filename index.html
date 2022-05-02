@@ -1,58 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="styles.css" />
+	</head>
+	<body>
+		<div class="image-container">
+			<div id="dialogue">
+				<h1>Answer the Riddle to Find your First Clue</h1>
+				<h3>
+					I have no voice and yet I speak to you, I tell of all things in the
+					world that people do. I have leaves, but I am not a tree, I have
+					pages, but I am not a bride or royalty. I have a spine and hinges, but
+					I am not a man or a door, I have told you all, I cannot tell you more.
+					What am I?
+				</h3>
+			</div>
 
-    <button id="myBtnOne">Open Modal</button>
-    <div id="riddleOne" class="modal">
-      <div class="modal-content">
-        <span id="closeOne" class="close">&times;</span>
-        <p>Face with a tree, skin like the sea. A great beast I am, yet vermin frightens me. What am I?</p>
-        <input id="answerOne" type="text">
-      </div>
-    
-    </div>
+			<div class="locks">
+				<div class="lock">
+					<img
+						id="lockOne"
+						src="https://img.favpng.com/14/10/23/lock-computer-icons-png-favpng-5UyRH8tFup9P4DdAsedMhUC8z.jpg"
+					/>
+				</div>
+				<div class="lock">
+					<img
+						id="lockTwo"
+						src="https://img.favpng.com/14/10/23/lock-computer-icons-png-favpng-5UyRH8tFup9P4DdAsedMhUC8z.jpg"
+					/>
+				</div>
+				<div class="lock">
+					<img
+						id="lockThree"
+						src="https://img.favpng.com/14/10/23/lock-computer-icons-png-favpng-5UyRH8tFup9P4DdAsedMhUC8z.jpg"
+					/>
+				</div>
+			</div>
 
-    <button id="myBtnTwo">Open Modal</button>
-    <div id="riddleTwo" class="modal">
-        <div class="modal-content">
-          <span id="closeTwo" class="close">&times;</span>
-          <p>I make two people out of one. What am I?</p>
-          <input id="answerTwo" type="text">
-        </div>
-      
-      </div>
+			<img
+				id="main-image"
+				src="https://static-prod.adweek.com/wp-content/uploads/2020/10/virtual-escape-room-PAGE-2020.jpg"
+				alt="main image"
+				style="width: 100%"
+			/>
 
-      <button id="myBtnThree">Open Modal</button>
-      <div id="riddleThree" class="modal">
-        <div class="modal-content">
-          <span id="closeThree" class="close">&times;</span>
-          <p>I hold Lambda on my flag with the values of discipline, obedience, and courage(ΔΗΜΟΣ ΣΠΑΡΤΗΣ). What am I?</p>
-          <input id="answerThree" type="text">
-        </div>
-      
-      </div>
-        
-      <div class="lock">
-        <img id="lockOne" src="https://img.favpng.com/14/10/23/lock-computer-icons-png-favpng-5UyRH8tFup9P4DdAsedMhUC8z.jpg">
-      </div>
-      <div class="lock">
-        <img id="lockTwo" src="https://img.favpng.com/14/10/23/lock-computer-icons-png-favpng-5UyRH8tFup9P4DdAsedMhUC8z.jpg">
-      </div>
-      <div class="lock">
-        <img id="lockThree" src="https://img.favpng.com/14/10/23/lock-computer-icons-png-favpng-5UyRH8tFup9P4DdAsedMhUC8z.jpg">
-      </div>
-      
-      <div id="dialogue">
-        <h1>Answer the riddle to find your first clue</h1>
-        <h3>I have no voice and yet I speak to you, I tell of all things in the world that people do. I have leaves, but I am not a tree, I have pages, but I am not a bride or royalty. I have a spine and hinges, but I am not a man or a door, I have told you all, I cannot tell you more. What am I? </h3>
-      </div>
+			<div id="riddleOne" class="modal">
+				<div class="modal-content">
+					<span id="closeOne" class="close">&times;</span>
+					<p>
+						Face with a tree, skin like the sea. A great beast I am, yet vermin
+						frightens me. What am I?
+					</p>
+					<input id="answerOne" autocomplete="off" type="text" />
+					<button id="submitOne">Submit</button>
+				</div>
+			</div>
 
-    <script src="main.js"></script>
-</body>
+			<div id="riddleTwo" class="modal">
+				<div class="modal-content">
+					<span id="closeTwo" class="close">&times;</span>
+					<p>I make two people out of one. What am I?</p>
+					<input id="answerTwo" autocomplete="off" type="text" />
+					<button id="submitTwo">Submit</button>
+				</div>
+			</div>
+
+			<div id="riddleThree" class="modal">
+				<div class="modal-content">
+					<span id="closeThree" class="close">&times;</span>
+					<p>
+						I hold Lambda on my flag with the values of discipline, obedience,
+						and courage(ΔΗΜΟΣ ΣΠΑΡΤΗΣ). What am I?
+					</p>
+					<input id="answerThree" autocomplete="off" type="text" />
+					<button id="submitThree">Submit</button>
+				</div>
+			</div>
+		</div>
+
+	
+
+		<script src="main.js"></script>
+	</body>
 </html>
