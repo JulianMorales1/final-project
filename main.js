@@ -26,7 +26,7 @@ let escapeRoom = function () {
 	let h3 = document.querySelector('h3');
 	let dialogueBox = document.querySelector('#dialogue');
 
-	//let booksAnswered = false;
+	//let Riddles Answered = false;
 	let selectedOne = false;
 	let selectedTwo = false;
 	let selectedThree = false;
@@ -36,6 +36,8 @@ let escapeRoom = function () {
 	const offsetTop = img.offsetTop;
 	const offsetLeft = img.offsetLeft;
 
+
+	// Submit One
 	submitOne.addEventListener('click', function () {
 		if (answerOne.value.toLowerCase() === 'elephant') {
 			lockOne.src =
@@ -47,7 +49,22 @@ let escapeRoom = function () {
 			alert('wrong answer');
 		}
 	});
+	answerOne.addEventListener('keypress', function (e) {
+		if (e.key === 'Enter') {
+			if (answerOne.value.toLowerCase() === 'elephant') {
+			lockOne.src =
+				'https://www.freeiconspng.com/thumbs/lock-icon/unlock-icon-27.jpeg';
+			selectedOne = true;
+			modalOne.style.display = 'none';
+			return;
+			} else {
+			alert('wrong answer');
+			}
+		}
+	});
 
+
+	// Submit Two
 	submitTwo.addEventListener('click', function () {
 		if (answerTwo.value.toLowerCase() === 'mirror') {
 			lockTwo.src =
@@ -59,7 +76,24 @@ let escapeRoom = function () {
 			alert('wrong answer');
 		}
 	});
+	answerTwo.addEventListener('keypress', function (e) {
+		if (e.key === 'Enter') {
+			if (answerTwo.value.toLowerCase() === 'mirror') {
+			lockTwo.src =
+				'https://www.freeiconspng.com/thumbs/lock-icon/unlock-icon-27.jpeg';
+			selectedTwo = true;
+			modalTwo.style.display = 'none';
+			return;
+			} else {
+			alert('wrong answer');
+			}
+		}
+	});
+	
+	
 
+
+	// Submit Three
 	submitThree.addEventListener('click', function () {
 		if (answerThree.value.toLowerCase() === 'spartan') {
 			lockThree.src =
@@ -70,6 +104,21 @@ let escapeRoom = function () {
 			alert('wrong answer');
 		}
 	});
+	answerThree.addEventListener('keypress', function (e) {
+		if (e.key === 'Enter') {
+			if (answerThree.value.toLowerCase() === 'spartan') {
+			lockThree.src =
+				'https://www.freeiconspng.com/thumbs/lock-icon/unlock-icon-27.jpeg';
+			selectedThree = true;
+			modalThree.style.display = 'none';
+			} else {
+			alert('wrong answer');
+			}
+		}
+	});
+
+
+	
 
 
 	img.addEventListener('click', function (event) {
@@ -83,14 +132,15 @@ let escapeRoom = function () {
 
 		//  Please, check coordinates with console logs for correct x y coordinates based on monitor size
 
-		// 590 175
-		// 812 144
+		// 
+		// 
 
 		// Modal 1
 		if (x >= 971 && x <= 1077) {
 			if (y >= 312 && y <= 375) {
 				if (!selectedOne && !selectedTwo) {
 					modalOne.style.display = 'block';
+					answerOne.focus();
 				}
 			}
 		}
@@ -101,32 +151,39 @@ let escapeRoom = function () {
 			if (y >= 105 && y <= 214) {
 				if (!selectedTwo && selectedOne) {
 					modalTwo.style.display = 'block';
+					answerTwo.focus();
 				}
 			}
 		}
 
 		// Modal 3
-		if (x >= 356 && x <= 404) {
-			if (y >= 61 && y <= 101) {
+		if (x >= 483 && x <= 527) {
+			if (y >= 94 && y <= 137) {
 				if (!selectedThree && selectedTwo) {
 					modalThree.style.display = 'block';
+					answerThree.focus();
 				}
 			}
 		}
 
 		// Item 4
-		if (x >= 741 && x <= 770) {
-			if (y >= 161 && y <= 211) {
-				if (!selectedThree) {
-					console.log('working here');
-					dialogueBox.style.backroundImage =
-						'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSj0pwcW_9PqoSban3fhoXi7PT6tV4PWYsNuw&usqp=CAU';
+		if (x >= 986 && x <= 1007) {
+			if (y >= 220 && y <= 284) {
+				if (selectedThree && selectedOne && selectedTwo) {
+					console.log('working');
+					h1.innerText = ' You Escaped!';
+					h3.innerText = '';
+					dialogueBox.style.backgroundImage = "url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSj0pwcW_9PqoSban3fhoXi7PT6tV4PWYsNuw&usqp=CAU')";
+					dialogueBox.style.height = '167px';
+					dialogueBox.style.width = '300px';
+					dialogueBox.style.marginLeft = '900px';
+					dialogueBox.style.marginTop = '700px';
+					dialogueBox.style.marginRight = '200px';
+					dialogueBox.style.backgroundRepeat ='no-repeat';
+					h1.style.fontSize = 'large';
 				}
 			}
 		}
-
-		// output.innerHTML =
-		// '(' + event.clientX - offsetLeft + ', ' + event.clientY - offsetTop + ')';
 	});
 };
 
@@ -136,30 +193,17 @@ escapeRoom();
 
 // //      modal 1       //
 
-submitOne.onclick = function () {
-	modalOne.style.display = 'block';
-};
-
 spanOne.onclick = function () {
 	modalOne.style.display = 'none';
 };
 
-
 // //      modal 2       //
-
-submitTwo.onclick = function () {
-	modalTwo.style.display = 'block';
-};
 
 spanTwo.onclick = function () {
 	modalTwo.style.display = 'none';
 };
 
 // //      modal 3      //
-
-submitThree.onclick = function () {
-	modalThree.style.display = 'block';
-};
 
 spanThree.onclick = function () {
 	modalThree.style.display = 'none';
@@ -177,5 +221,7 @@ window.onclick = function (event) {
 		modalThree.style.display = 'none';
 	}
 };
+
+
 
 
